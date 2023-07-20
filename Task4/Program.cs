@@ -16,17 +16,17 @@ class Program
         PrintArray(arr);
     }
 
-    // Создание трёхмерного массива с уникальными значениями
+
     static int[,,] CreateRandomUniqueArray(int dim1, int dim2, int dim3)
     {
         int[,,] array = new int[dim1, dim2, dim3];
 
-        // Создаём список из двузначных чисел
+
         List<int> numbers = new List<int>();
         for (int i = 10; i < 100; i++)
             numbers.Add(i);
 
-        // Инициализация генератора случайных чисел
+
         Random rand = new Random();
 
         for (int i = 0; i < dim1; i++)
@@ -35,10 +35,10 @@ class Program
             {
                 for (int k = 0; k < dim3; k++)
                 {
-                    // Выбираем случайное число из списка
+
                     int index = rand.Next(numbers.Count);
 
-                    // Заполняем ячейку массива и удаляем число из списка
+
                     array[i, j, k] = numbers[index];
                     numbers.RemoveAt(index);
                 }
@@ -48,7 +48,7 @@ class Program
         return array;
     }
 
-    // Вывод трёхмерного массива с индексами
+
     static void PrintArray(int[,,] array)
     {
         for (int i = 0; i < array.GetLength(0); i++)
